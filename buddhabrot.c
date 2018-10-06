@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-    char *fn = "out";
+    char *fn = "out.bin";
     if (argc == 2) {
 	fn = argv[1];
     }
@@ -10,8 +10,25 @@ int main(int argc, char **argv)
     int *pixels = malloc(WIDTH * HEIGHT * sizeof(int));
     struct point *points = malloc(MAX_ITER * sizeof(struct point));
     int points_idx = 0;
+    int progress_step = N_POINTS / 100;
     for (int i = 0; i < N_POINTS; ++i) {
-
+	if (i % progress_step == 0) {
+	    //putchar('[');
+	    int progress = i / progress_step;
+	    int bar_x = (PROGRESS_BAR_LENGTH * i) / N_POINTS;
+	    int n_dash = bar_x ? bar_x - 1 : 0;
+	    int n_spaces = PROGRESS_BAR_LENGTH - bar_x;
+	    fputs("[", stdout);
+	    for (int k = 0; k < n_dash; ++k) {
+		fputc('=', stdout);
+	    }
+	    fputc('>', stdout);
+	    for (int k = 0; k < n_spaces; ++k) {
+		fputc(' ', stdout);
+	    }
+	    printf("] %d%%\r", progress);
+	    fflush(stdout);
+	}
 	float cr = RAND(MIN_R, MAX_R);
 	float ci = RAND(MIN_I, MAX_I);
 	float zr = 0;
@@ -45,7 +62,8 @@ int main(int argc, char **argv)
 	    }
 	}
     }
-    FILE *fp = fopen(fn, "wb");
+    puts("");
+    FILE *fp = fopen(fn, "w b");
     for (int i = 0; i < WIDTH * HEIGHT; ++i) {
 	union bytes b;
 	b.i = pixels[i];

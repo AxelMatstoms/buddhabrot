@@ -21,4 +21,4 @@ for y in range(HEIGHT):
         #clr = int(20 * math.log(val, 10) if val != 0 else 0)
         im.putpixel((x, y), (0, clr // 2, clr))
 
-im.save("out2.png", "PNG")
+im.save("out.png", "PNG")

@@ -12,8 +12,10 @@
 #define MAX_I 2.0
 #define MIN_R -2.0
 #define MIN_I -2.0
-#define MAX_ITER 1000000
-#define N_POINTS 1000000000
+#define MAX_ITER 100
+#define N_POINTS 100000000
+#define PROGRESS_BAR_LENGTH 50
+
 #define IDX(x, y) (y * WIDTH + x)
 #define RAND(min, max) ((max - min) * ((float) rand() / (float) RAND_MAX) + min)
 #define POINT_I(i) ((int) (((i - MIN_I) / (MAX_I - MIN_I)) * HEIGHT))
