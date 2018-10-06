@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	    int progress = i / progress_step;
 	    int bar_x = (PROGRESS_BAR_LENGTH * i) / N_POINTS;
 	    int n_dash = bar_x ? bar_x - 1 : 0;
-	    int n_spaces = PROGRESS_BAR_LENGTH - bar_x;
+	    int n_spaces = PROGRESS_BAR_LENGTH - n_dash - 1;
 	    fputs("[", stdout);
 	    for (int k = 0; k < n_dash; ++k) {
 		fputc('=', stdout);

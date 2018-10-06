@@ -1,2 +1,3 @@
 # buddhabrot
-![buddhabrot](img/out.png)
+![buddhabrot](img/buddha.png)
+![nebula](img/nebula.png)

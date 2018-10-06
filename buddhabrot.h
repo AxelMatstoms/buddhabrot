@@ -12,8 +12,8 @@
 #define MAX_I 2.0
 #define MIN_R -2.0
 #define MIN_I -2.0
-#define MAX_ITER 100
-#define N_POINTS 100000000
+#define MAX_ITER 310
+#define N_POINTS 1000000000
 #define PROGRESS_BAR_LENGTH 50
 
 #define IDX(x, y) (y * WIDTH + x)

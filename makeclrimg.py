@@ -1,12 +1,14 @@
 import math
 import struct
+import sys
 
 from PIL import Image
 
-WIDTH = 512
-HEIGHT = 512
+WIDTH = 2048
+HEIGHT = 2048
 
-fns = ("red", "green", "blue")
+fns = sys.argv[1:]
+assert(len(fns) == 3)
 imgs = []
 
 for fn in fns:
@@ -26,4 +28,4 @@ for y in range(HEIGHT):
         #clr = int(20 * math.log(val, 10) if val != 0 else 0)
         im.putpixel((x, y), (r, g, b))
 
-im.save("out.png", "PNG")
+im.save("out_nebula.png", "PNG")

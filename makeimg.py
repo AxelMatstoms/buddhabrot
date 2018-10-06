@@ -6,7 +6,7 @@ from PIL import Image
 WIDTH = 2048
 HEIGHT = 2048
 
-with open("out", "rb") as f:
+with open("out.bin", "rb") as f:
     buf = f.read()
 
 ints = struct.unpack("i" * (WIDTH * HEIGHT), buf)
