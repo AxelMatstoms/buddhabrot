@@ -1,5 +1,9 @@
 # Created by https://www.gitignore.io/api/c,emacs
 
+*.out
+*.png
+buddhabrot
+
 ### C ###
 # Prerequisites
 *.d

@@ -12,7 +12,7 @@
 #define MAX_I 2.0
 #define MIN_R -2.0
 #define MIN_I -2.0
-#define MAX_ITER 310
+#define MAX_ITER 100
 #define N_POINTS 1000000000
 #define PROGRESS_BAR_LENGTH 50
 
